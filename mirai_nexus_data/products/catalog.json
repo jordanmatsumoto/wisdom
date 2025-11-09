@@ -1,0 +1,23 @@
+[
+  {
+    "sku": "MN-PULSE-01",
+    "name": "Mirai Pulse",
+    "summary": "Orchestrate workflows, triggers, and integrations.",
+    "price_usd": 25000,
+    "license": "enterprise"
+  },
+  {
+    "sku": "MN-VISION-01",
+    "name": "Mirai Vision",
+    "summary": "Operational analytics and forecasting.",
+    "price_usd": 18000,
+    "license": "enterprise"
+  },
+  {
+    "sku": "MN-LINK-01",
+    "name": "Mirai Link",
+    "summary": "Secure connectors for common enterprise systems.",
+    "price_usd": 9000,
+    "license": "subscription"
+  }
+]

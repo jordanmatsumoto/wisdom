@@ -1,0 +1,5 @@
+- Employee ID:
+- Name:
+- Date:
+- Trip / Purpose:
+- Itemized expenses (attach receipts)

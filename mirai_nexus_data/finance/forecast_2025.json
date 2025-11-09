@@ -1,0 +1,11 @@
+{
+  "year": 2025,
+  "total_revenue_projection_usd": 12500000,
+  "quarterly": {
+    "Q1": 3000000,
+    "Q2": 3200000,
+    "Q3": 3000000,
+    "Q4": 3300000
+  },
+  "notes": "Conservative projection based on current pipeline and 15% YoY growth target."
+}
