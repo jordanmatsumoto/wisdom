@@ -1,6 +1,6 @@
 # Wisdom
 
-**Wisdom** is an AI-powered knowledge base assistant built with **Python**, **Gradio**, **ChromaDB**, and **OpenAI**. Wisdom uses **Retrieval-Augmented Generation (RAG)** to answer questions by retrieving relevant document content and generating **context-aware answers**. Related source documents are displayed as clickable links for full transparency. This project demonstrates **vector-based retrieval**, **LLM integration**, and a clean **interactive UI**.
+Wisdom is an AI-powered knowledge base assistant built with Python, Gradio, ChromaDB, and OpenAI. Wisdom uses Retrieval-Augmented Generation (RAG) to answer questions by retrieving relevant document content and generating context-aware answers. Related source documents are displayed as clickable links for full transparency. This project demonstrates vector-based retrieval, LLM integration, and an interactive UI.
 
 ## Screenshots
 
@@ -49,6 +49,27 @@
 - **View Sources:** See clickable links to the top documents related to your query.  
 - **Clear Conversation:** Reset chat history for a new session.  
 
+## How Wisdom Works
+
+### Document Loading
+- Markdown and CSV files are recursively loaded from `mirai_nexus_data/`.  
+- Each file is split into overlapping chunks for semantic search.  
+
+### Vector Search
+- Embeddings are created using OpenAI’s `text-embedding-3-small`.  
+- ChromaDB stores document chunks and metadata for efficient retrieval.  
+
+### Retrieval-Augmented Generation (RAG)
+- User question is converted into an embedding vector.  
+- ChromaDB retrieves the top relevant document chunks.  
+- GPT-4o-mini generates answers using the retrieved documents as context, ensuring factual, grounded responses.  
+- Related documents are displayed as clickable links for verification.  
+
+### Gradio Interface
+- Two-column layout: Chat on left, related documents on right.  
+- Custom theme, project icon, and responsive design.  
+- Chatbox supports new questions and clearing conversation history.
+  
 ## Installation
 
 1. **Clone the repository**
@@ -71,39 +92,4 @@ pip install -r requirements.txt
 python wisdom.py
 ```
 5. **Open the Gradio interface**  
-A local URL and optional public URL will appear in the console.
-
-## How Wisdom Works
-
-### Document Loading
-- Markdown and CSV files are recursively loaded from `mirai_nexus_data/`.  
-- Each file is split into overlapping chunks for semantic search.  
-
-### Vector Search
-- Embeddings are created using OpenAI’s `text-embedding-3-small`.  
-- ChromaDB stores document chunks and metadata for efficient retrieval.  
-
-### Retrieval-Augmented Generation (RAG)
-- User question is converted into an embedding vector.  
-- ChromaDB retrieves the top relevant document chunks.  
-- GPT-4o-mini generates answers using the retrieved documents as context, ensuring factual, grounded responses.  
-- Related documents are displayed as clickable links for verification.  
-
-### Gradio Interface
-- Two-column layout: Chat on left, related documents on right.  
-- Custom theme, project icon, and responsive design.  
-- Chatbox supports new questions and clearing conversation history.  
-
-## File Structure
-```
-wisdom/  
-├── assets/  
-│   ├── icons/  
-│   └── screenshots/  
-├── mirai_nexus_data/  
-├── wisdom.py  
-├── README.md  
-├── requirements.txt  
-├── .gitignore  
-└── LICENSE
-```
+A local URL and optional public URL will appear in the console. 
